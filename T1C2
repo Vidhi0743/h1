@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clue 2: The Riddle</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url("images/bg.jpeg"); /* Your Da Vinci-related image */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .header {
+      background-color: rgb(89, 51, 5); /* Transparent background */
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+      border-radius: 10px;
+    }
+
+    .clue {
+      background-color: rgba(234, 187, 87, 0.76);
+      border: 2px solid #2c3e50;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .clue h3 {
+      color: #2c3e50;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-container input {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 2px solid #2c3e50;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: rgb(89, 51, 5);
+    }
+
+    .hint {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .solution {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .next-clue {
+      display: none;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>The Da Vinci Mystery - Clue 2</h1>
+    <p>Translate the Latin riddle to find the historical date.</p>
+  </div>
+
+  <div class="container">
+    <!-- Clue 2 -->
+    <div class="clue" id="clue2">
+      <h3>Clue 2: A riddle in Latin that translates to an important date in history.</h3>
+      <p>The riddle in Latin gives you a hint to an important historical date. Translate the Latin to discover the date!</p>
+      <p><em>Tempus fugit, sed memoria manet.</em> (Time flies, but memory remains.)</p>
+      
+      <div class="input-container">
+        <label for="clue2-answer">Enter the historical date (in YYYY format):</label>
+        <input type="text" id="clue2-answer" placeholder="Your answer...">
+        <button class="btn" onclick="checkClue2()">Submit</button>
+        <p class="hint" id="clue2-hint">Hint: It's the year Da Vinci started painting *The Mona Lisa*.</p>
+      </div>
+      <div class="solution" id="clue2-solution">Correct! The date is 1503 (the year Da Vinci began painting *The Mona Lisa*). Now, on to the next clue!</div>
+      <div class="next-clue" id="next-clue2">
+        <a href="T1C3.html" class="btn">Next Clue</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkClue2() {
+      const answer = document.getElementById('clue2-answer').value;
+      if (answer === '1503') {
+        document.getElementById('clue2-solution').style.display = 'block';
+        document.getElementById('next-clue2').style.display = 'block';
+      } else {
+        alert('Incorrect! Try again.');
+      }
+    }
+  </script>
+
+</body>
+</html>

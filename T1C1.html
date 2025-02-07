@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Da Vinci Mystery</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url("images/bg.jpeg"); /* Your Da Vinci-related image */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      color: white;
+      
+    }
+
+    .header {
+      background-color: rgb(89, 51, 5); /* Transparent background */
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+      border-radius: 10px;
+    }
+
+    .clue {
+      background-color: rgba(234, 187, 87, 0.76);
+      border: 2px solid #2c3e50;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .clue h3 {
+      color: #2c3e50;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-container input {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 2px solid #2c3e50;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: rgb(89, 51, 5);
+    }
+
+    .hint {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .solution {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .next-clue {
+      display: none;
+      margin-top: 15px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>The Da Vinci Mystery</h1>
+    <p>Follow the clues to uncover the hidden treasure!</p>
+  </div>
+
+  <div class="container">
+    <!-- Clue 1: A painting hides a number cipher in plain sight -->
+    <div class="clue" id="clue1">
+      <h3>Clue 1: A painting hides a number cipher in plain sight.</h3>
+      <p>To start, think about famous Da Vinci paintings and what they might conceal. A number cipher is hidden in plain sight. The answer is related to Da Vinci's legacy.</p>
+      
+      <!-- Image placeholder -->
+      <img src="images/monalisa.jpeg" alt="Da Vinci Painting">
+
+      <div class="input-container">
+        <label for="clue1-answer">Enter the cipher answer (hint: two letters):</label>
+        <input type="text" id="clue1-answer" placeholder="Your answer...">
+        <button class="btn" onclick="checkClue1()">Submit</button>
+        <p class="hint" id="clue1-hint">Hint: Think about Da Vinci’s initials.</p>
+      </div>
+      <div class="solution" id="clue1-solution">Correct! The cipher answer is LV (Leonardo da Vinci). Let's move on to the next clue.</div>
+      <div class="next-clue" id="next-clue1">
+        <a href="T1C2.html" class="btn">Next Clue</a> <!-- Redirect to clue 2 -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function checkClue1() {
+      const answer = document.getElementById('clue1-answer').value.toUpperCase();
+      if (answer === 'LV') {
+        document.getElementById('clue1-solution').style.display = 'block';
+        document.getElementById('next-clue1').style.display = 'block';
+      } else {
+        alert('Incorrect! Try again.');
+      }
+    }
+  </script>
+
+</body>
+</html>
